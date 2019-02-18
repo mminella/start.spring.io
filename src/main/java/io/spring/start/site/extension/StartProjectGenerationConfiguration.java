@@ -75,4 +75,10 @@ public class StartProjectGenerationConfiguration {
 		return new SpringSessionBuildCustomizer(description);
 	}
 
+	@Bean
+	@ConditionalOnRequestedDependency("flyway")
+	public FlywayProjectContributor flywayProjectContributor() {
+		return new FlywayProjectContributor();
+	}
+
 }
